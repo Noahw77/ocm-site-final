@@ -203,3 +203,43 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
     background: var(--dark-blue);
     margin: 5px 0;
     trans
+
+    /* --- Mobile header fix: hide nav until toggled --- */
+@media (max-width: 860px) {
+  /* Layout: brand + hamburger on row 1, nav on row 2 */
+  .ocm-header .container {
+    display: grid;
+    grid-template-columns: 1fr auto; /* brand | toggle */
+    grid-template-areas:
+      "brand toggle"
+      "nav nav";
+    row-gap: 8px;
+  }
+  .ocm-header .brand { grid-area: brand; }
+  .ocm-header .nav-toggle { grid-area: toggle; display: inline-block; }
+
+  /* 👇 IMPORTANT: nav is hidden by default on mobile */
+  .ocm-header .nav {
+    grid-area: nav;
+    display: none !important;      /* hide before tap */
+    margin: 0;
+    padding: 8px 0;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* Show nav only when header has .menu-open (set by JS) */
+  .ocm-header.menu-open .nav {
+    display: block !important;
+  }
+
+  /* Stack links vertically on mobile */
+  .ocm-header .nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+
+  /* Safety: prevent any overflow from long lines */
+  .ocm-header { overflow: hidden; }
+}
