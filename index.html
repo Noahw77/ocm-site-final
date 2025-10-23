@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ochoco Capital Management</title>
+  <meta name="description" content="Ochoco Capital Management focuses on U.S.-listed technology, media, and telecom companies." />
+  <!-- Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+  <!-- Header include -->
+  <div id="header-include"></div>
+
+  <!-- Hero -->
+  <section class="hero hero--light-blue">
+    <div class="container hero-inner">
+      <h1>Ochoco Capital Management</h1>
+      <p class="subhead">We focus on U.S.-listed technology, media, and telecom companies and build a concentrated, long-term portfolio of exceptional businesses purchased at attractive valuations.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main>
+    <!-- Section A (dark blue) -->
+    <section class="section section--dark">
+      <div class="container grid-2">
+        <figure class="founder-card">
+          <img src="assets/images/founder.png" alt="Steve Weinstein" class="founder-photo" />
+          <figcaption>
+            <div class="founder-name">Steve Weinstein</div>
+            <div class="founder-title">Fund Owner and Manager</div>
+          </figcaption>
+        </figure>
+        <blockquote class="quote">
+          “The increasingly rapid flow of information and data is leading to shorter investment cycles. This creates opportunities to arbitrage investment time frames and capture value by focusing on the longer-term.”
+          <span class="quote-attrib">— Steve Weinstein, Founder and Fund Manager</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Section B (light blue) -->
+    <section class="section section--light">
+      <div class="container cta">
+        <h2>Ready to talk?</h2>
+        <p>Get in touch to learn more about our approach and whether we’re a fit for your goals.</p>
+        <a href="contact.html" class="btn btn--primary">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer include -->
+  <div id="footer-include"></div>
+
+  <!-- Include loader + header shadow on scroll -->
+  <script>
+    async function include(id, file) {
+      try {
+        const res = await fetch(file, { cache: 'no-cache' });
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (e) {
+        console.error('Include failed for', file, e);
+      }
+    }
+    include('header-include', 'header.html');
+    include('footer-include', 'footer.html');
+
+    // Header shadow on scroll
+    const onScroll = () => {
+      const header = document.querySelector('.ocm-header');
+      if (!header) return;
+      if (window.scrollY > 2) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+  </script>
+</body>
+</html>

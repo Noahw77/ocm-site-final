@@ -1,0 +1,34 @@
+/* css/index.css: homepage hero + content sections */
+.hero{
+  padding: 72px 0;
+}
+.hero--light-blue{
+  background: var(--light-blue);
+  color: var(--text-dark);
+}
+.hero-inner{max-width: 900px; text-align: center;}
+.subhead{font-size: 1.05rem; margin-top: 10px}
+
+/* Sections */
+.section{padding: 56px 0}
+.section--dark{background: var(--dark-blue); color: var(--text-light)}
+.section--light{background: var(--light-blue); color: var(--text-dark)}
+
+.founder-card{margin:0}
+.founder-photo{
+  width: 100%; max-width: 380px; height: auto; border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+.founder-name{font-weight:700; font-size:1.1rem; margin-top:10px}
+.founder-title{opacity:.95}
+
+.quote{
+  font-weight:600;
+  font-size: 1.1rem;
+  padding: 10px 0;
+}
+.quote-attrib{display:block; margin-top: 10px; font-size: .95rem; opacity:.95}
+
+.cta{text-align:center}
+.cta h2{margin-bottom: 6px}
+.cta p{margin-top:0; margin-bottom: 18px}
