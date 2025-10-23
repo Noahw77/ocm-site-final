@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Ochoco Capital Management</title>
+  <meta name="description" content="Contact Ochoco Capital Management for investor inquiries and information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+  <div id="header-include"></div>
+
+  <!-- Hero -->
+  <section class="hero hero--light-blue">
+    <div class="container hero-inner">
+      <h1>Contact</h1>
+      <p class="subhead">We welcome thoughtful conversations with long-term partners.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main>
+    <!-- Form Section (dark blue for contrast) -->
+    <section class="section section--dark">
+      <div class="container narrow left">
+        <form class="contact-form" action="#" method="post" novalidate>
+          <div class="grid">
+            <div class="field">
+              <label for="firstName">First Name<span aria-hidden="true">*</span></label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name<span aria-hidden="true">*</span></label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="email">Email<span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(###) ###-####" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject<span aria-hidden="true">*</span></label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+
+          <div class="field">
+            <label for="message">Message<span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn--primary" aria-disabled="true">Send Message</button>
+            <p class="hint">This form is a visual placeholder. Add an action URL or JS handler to enable submissions.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Optional Light Section for future info (kept minimal for now) -->
+    <section class="section section--light">
+      <div class="container narrow left">
+        <p><strong>Note:</strong> If you'd prefer, you can email us directly at <em>info@example.com</em>. Replace this placeholder with your fund's email.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-include"></div>
+
+  <script>
+    async function include(id, file) {
+      try {
+        const res = await fetch(file, { cache: 'no-cache' });
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (e) {
+        console.error('Include failed for', file, e);
+      }
+    }
+    include('header-include', 'header.html');
+    include('footer-include', 'footer.html');
+  </script>
+</body>
+</html>
