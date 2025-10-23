@@ -1,0 +1,61 @@
+/* faq.css: accessible drop-down FAQ using <details>/<summary> */
+
+.hero{ padding:72px 0; }
+.hero--light-blue{ background: var(--light-blue); color: var(--text-dark); }
+.hero-inner{ max-width:900px; text-align:center; }
+.subhead{ font-size:1.05rem; margin-top:10px; }
+
+.section{ padding:56px 0; }
+.section--light{ background: var(--light-blue); color: var(--text-dark); }
+
+.container.narrow{ max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+.container.left{ text-align: left; }
+
+.faq-item{
+  background: #fff;
+  border: 1px solid rgba(44,80,124,0.25); /* dark-blue tint */
+  border-radius: 12px;
+  padding: 0;
+  margin: 0 0 14px 0;
+  overflow: hidden;
+}
+
+.faq-item[open]{
+  border-color: rgba(44,80,124,0.45);
+  background: #fff;
+}
+
+.faq-item > summary{
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 16px 18px;
+  position: relative;
+  outline: none;
+}
+
+.faq-item > summary::-webkit-details-marker{ display: none; }
+.faq-item > summary::after{
+  content: "▾";
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  font-size: 1rem;
+  transform: rotate(0deg);
+  transition: transform .15s ease;
+  color: var(--dark-blue);
+}
+
+.faq-item[open] > summary::after{
+  transform: rotate(180deg);
+}
+
+.faq-item p{
+  margin: 0;
+  padding: 0 18px 18px 18px;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .faq-item{ transition: border-color .2s ease; }
+}
