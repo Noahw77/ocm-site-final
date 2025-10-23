@@ -58,31 +58,42 @@
   <div id="footer-include"></div>
 
   <!-- Include loader + header shadow on scroll -->
-  <script>
-    async function include(id, file) {
-      try {
-        const res = await fetch(file, { cache: 'no-cache' });
-        const html = await res.text();
+ <script>
+  function include(id, file) {
+    return fetch(file, { cache: 'no-cache' })
+      .then(res => res.text())
+      .then(html => {
         document.getElementById(id).innerHTML = html;
-      } catch (e) {
-        console.error('Include failed for', file, e);
-      }
-    }
-    include('header-include', 'header.html');
-    include('footer-include', 'footer.html');
+      });
+  }
 
-    // Header shadow on scroll
-    const onScroll = () => {
-      const header = document.querySelector('.ocm-header');
-      if (!header) return;
-      if (window.scrollY > 2) {
-        header.classList.add('is-scrolled');
-      } else {
-        header.classList.remove('is-scrolled');
+  Promise.all([
+    include('header-include', 'header.html'),
+    include('footer-include', 'footer.html')
+  ]).then(() => {
+    const header = document.querySelector('.ocm-header');
+    const btn = header?.querySelector('.nav-toggle');
+    if (!header || !btn) return;
+
+    const mq = window.matchMedia('(max-width: 860px)');
+
+    function toggleMenu() {
+      if (!mq.matches) return; // only act on mobile
+      const open = header.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    btn.addEventListener('click', toggleMenu);
+
+    // If resizing from mobile->desktop, ensure menu closes
+    mq.addEventListener?.('change', (e) => {
+      if (!e.matches) {
+        header.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
       }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('load', onScroll);
-  </script>
+    });
+  });
+</script>
+
 </body>
 </html>
