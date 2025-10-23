@@ -163,3 +163,43 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
   color: #fff;
 }
 .btn--primary:hover{background:#254569}
+
+/* ===== Mobile nav overrides (place at END of styles.css) ===== */
+
+/* Desktop defaults */
+.ocm-header .nav-toggle {
+  display: none;
+}
+.ocm-header .nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Mobile layout */
+@media (max-width: 860px) {
+  /* Layout: brand + toggle on top row, nav below */
+  .ocm-header .container {
+    display: grid;
+    grid-template-columns: 1fr auto; /* brand | toggle */
+    grid-template-areas:
+      "brand toggle"
+      "nav nav";
+    row-gap: 8px;
+  }
+
+  .ocm-header .brand { grid-area: brand; }
+  .ocm-header .nav-toggle {
+    grid-area: toggle;
+    display: inline-block;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .ocm-header .nav-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--dark-blue);
+    margin: 5px 0;
+    trans
