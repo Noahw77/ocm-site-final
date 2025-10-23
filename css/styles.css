@@ -167,14 +167,8 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
 /* ===== Mobile nav overrides (place at END of styles.css) ===== */
 
 /* Desktop defaults */
-.ocm-header .nav-toggle {
-  display: none;
-}
-.ocm-header .nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
+.ocm-header .nav { display: flex; align-items: center; gap: 1.5rem; }
+.ocm-header .nav-toggle { display: none; }
 
 /* Mobile layout */
 @media (max-width: 860px) {
