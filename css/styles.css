@@ -37,7 +37,7 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
   padding: 14px 20px;
 }
 .brand{display:flex; align-items:center; gap: 12px; text-decoration:none; color:inherit;}
-.logo{height:38px; width:auto; object-fit:contain}
+.logo{height:65px; width:auto; object-fit:contain}
 .logo.small{height:28px}
 .brand-name{font-weight:700; letter-spacing:.2px}
 
