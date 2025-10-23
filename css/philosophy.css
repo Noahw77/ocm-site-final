@@ -1,0 +1,61 @@
+/* philosophy.css: alternating principle sections with dividers and left-aligned text */
+.hero{
+  padding: 72px 0;
+}
+.hero--light-blue{
+  background: var(--light-blue);
+  color: var(--text-dark);
+}
+.hero-inner{
+  max-width: 900px;
+  text-align: center;
+}
+.subhead{
+  font-size: 1.05rem;
+  margin-top: 10px;
+}
+
+.section{
+  padding: 56px 0;
+}
+.section--dark{
+  background: var(--dark-blue);
+  color: var(--text-light);
+}
+.section--light{
+  background: var(--light-blue);
+  color: var(--text-dark);
+}
+
+.container.narrow{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.container.left{
+  text-align: left;
+}
+
+h2{
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+
+p{
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Divider styling */
+.divider{
+  border: none;
+  height: 1px;
+  margin: 0;
+}
+.section--light .divider{
+  background: rgba(44,80,124,0.25);
+}
+.section--dark .divider{
+  background: rgba(255,255,255,0.25);
+}
