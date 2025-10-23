@@ -41,7 +41,12 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
 .logo.small{height:28px}
 .brand-name{font-weight:700; letter-spacing:.2px}
 
-.nav{display:flex; gap: 16px; flex-wrap:wrap; align-items:center}
+.nav{
+  display:flex;
+  gap:16px;
+  flex-wrap:nowrap; /* Prevent line break */
+  align-items:center;
+}
 .nav-link{
   text-decoration:none; color: var(--dark-blue); font-weight:600;
   padding: 6px 10px; border-radius: 10px;
