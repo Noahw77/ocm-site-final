@@ -71,18 +71,31 @@
 
   <div id="footer-include"></div>
 
-  <script>
-    async function include(id, file) {
-      try {
-        const res = await fetch(file, { cache: 'no-cache' });
-        const html = await res.text();
+<script>
+  // Shared include function that returns a Promise
+  function include(id, file) {
+    return fetch(file, { cache: 'no-cache' })
+      .then(res => res.text())
+      .then(html => {
         document.getElementById(id).innerHTML = html;
-      } catch (e) {
-        console.error('Include failed for', file, e);
-      }
-    }
-    include('header-include', 'header.html');
-    include('footer-include', 'footer.html');
-  </script>
+      });
+  }
+
+  // Load header + footer first, then activate hamburger toggle
+  Promise.all([
+    include('header-include', 'header.html'),
+    include('footer-include', 'footer.html')
+  ]).then(() => {
+    const header = document.querySelector('.ocm-header');
+    const btn = header?.querySelector('.nav-toggle');
+    if (!header || !btn) return;
+
+    btn.addEventListener('click', () => {
+      const open = header.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+</script>
+
 </body>
 </html>

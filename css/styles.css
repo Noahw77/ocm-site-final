@@ -65,6 +65,72 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
   color: #fff;
 }
 .nav-cta:active{ transform: translateY(1px) }
+/* --- Mobile menu toggle (hidden on desktop) --- */
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--dark-blue);
+  margin: 5px 0;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* --- Mobile layout --- */
+@media (max-width: 860px) {
+  /* Make header row: brand + toggle; nav moves below */
+  .ocm-header .container {
+    display: grid;
+    grid-template-columns: 1fr auto; /* brand | toggle */
+    grid-template-areas:
+      "brand toggle"
+      "nav nav";
+    row-gap: 8px;
+  }
+  .brand { grid-area: brand; }
+  .nav-toggle { grid-area: toggle; display: inline-block; }
+  .nav { grid-area: nav; width: 100%; }
+
+  /* Logo scales down on phones but desktop size remains */
+  .ocm-header .logo { height: clamp(36px, 8vw, 120px); }
+  .brand-name { font-size: 0.95rem; }
+  /* If you need more space on very narrow screens, uncomment:
+     .brand-name { display:none; } */
+
+  /* Collapse nav by default on mobile */
+  .nav {
+    display: none;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 8px 0;
+  }
+  /* Stack links vertically */
+  .nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .nav a:hover { background: rgba(44,80,124,0.08); }
+
+  /* Outlined CTA still looks good full-width */
+  .nav-cta {
+    margin: 6px 12px 0;
+    text-align: center;
+  }
+
+  /* When menu is open */
+  .ocm-header.menu-open .nav { display: block; }
+
+  /* Footer logo responsive too (desktop cap unchanged) */
+  .ocm-footer .logo.small { height: clamp(28px, 6vw, 80px); }
+}
 
 /* Footer */
 .ocm-footer .logo.small {
