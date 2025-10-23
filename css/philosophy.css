@@ -59,3 +59,11 @@ p{
 .section--dark .divider{
   background: rgba(255,255,255,0.25);
 }
+/* Center CTA section */
+.section--light .cta {
+  text-align: center;
+}
+.section--light .cta h2,
+.section--light .cta p {
+  margin-bottom: 1rem;
+}
