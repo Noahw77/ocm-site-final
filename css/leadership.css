@@ -6,7 +6,8 @@
 
 .section{ padding:56px 0; }
 .section--dark{ background: var(--dark-blue); color: var(--text-light); }
-.section--light{ background: var(--light-blue); color: var(--text-dark);  text-align: center;}
+.section--light{ background: var(--light-blue); color: var(--text-dark); text-align: center;
+}
 
 .founder-card{ margin:0; }
 .founder-photo{ width:100%; max-width:380px; height:auto; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.25); }
