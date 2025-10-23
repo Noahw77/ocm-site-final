@@ -1,6 +1,6 @@
 /* faq.css: accessible drop-down FAQ using <details>/<summary> */
 
-.hero{ padding:72px 0; }
+.hero{ padding:40px 0; }
 .hero--light-blue{ background: var(--light-blue); color: var(--text-dark); }
 .hero-inner{ max-width:900px; text-align:center; }
 .subhead{ font-size:1.05rem; margin-top:10px; }
