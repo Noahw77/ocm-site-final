@@ -237,3 +237,57 @@ h1,h2,h3{font-weight:700; margin:0 0 .5rem 0; line-height:1.25}
   /* Safety: prevent any overflow from long lines */
   .ocm-header { overflow: hidden; }
 }
+
+/* ===== Robust mobile-first header behavior ===== */
+
+/* 1) Default: hide nav, show logo line only (works for all sizes unless overridden) */
+.ocm-header .nav {
+  display: none;               /* hide list by default */
+}
+.ocm-header .nav-toggle {
+  display: inline-block;       /* show hamburger by default */
+}
+
+/* 2) When menu is opened (set by JS), show the nav */
+.ocm-header.menu-open .nav {
+  display: block;
+}
+
+/* 3) Mobile layout: put nav below brand + toggle */
+@media (max-width: 860px) {
+  .ocm-header .container {
+    display: grid;
+    grid-template-columns: 1fr auto;   /* brand | toggle */
+    grid-template-areas:
+      "brand toggle"
+      "nav nav";
+    row-gap: 8px;
+  }
+  .ocm-header .brand { grid-area: brand; }
+  .ocm-header .nav-toggle { grid-area: toggle; }
+  .ocm-header .nav {
+    grid-area: nav;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 8px 0;
+  }
+
+  /* stack links vertically on mobile */
+  .ocm-header .nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+}
+
+/* 4) Desktop/Laptop: restore inline nav and hide hamburger */
+@media (min-width: 861px) {
+  .ocm-header .nav {
+    display: flex !important;         /* inline list for desktop */
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .ocm-header .nav-toggle {
+    display: none !important;         /* no hamburger on desktop */
+  }
+}
