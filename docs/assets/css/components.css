@@ -182,3 +182,36 @@ details.accordion p {
     height: 140px;
   }
 }
+
+.media-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.media-card__img img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-light, #C7D7EA);
+  background: #fff;
+  display: block;
+}
+
+.media-card__body .quote {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.6;
+}
+
+.media-card__body .quote-author {
+  color: var(--slate, #5B6775);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .media-card {
+    grid-template-columns: 1fr;
+  }
+}
