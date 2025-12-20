@@ -117,3 +117,32 @@ details.accordion p {
     margin-bottom: 1rem;
   }
 }
+
+/* Repeating watermark background for non-hero content */
+.page-main {
+  position: relative;
+  background: #fff; /* plain white base */
+  overflow: hidden; /* keeps pseudo-element from bleeding out */
+}
+
+/* watermark overlay */
+.page-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../images/logo-watermark.png");
+  background-repeat: repeat;
+  background-size: 420px;       /* adjust: larger = fewer repeats */
+  background-position: 0 0;
+
+  opacity: 0.06;                /* adjust: 0.04–0.10 typical */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ensure actual content stays above the watermark */
+.page-main > * {
+  position: relative;
+  z-index: 1;
+}
