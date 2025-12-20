@@ -146,3 +146,39 @@ details.accordion p {
   position: relative;
   z-index: 1;
 }
+
+/* Media card: image + text inside ONE bordered card */
+.media-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.media-card__img img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  display: block;
+  background: #fff;
+}
+
+/* Keep the quote looking like your clean bordered block */
+.quote-card blockquote {
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .media-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .media-card__img img {
+    width: 140px;
+    height: 140px;
+  }
+}
