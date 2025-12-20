@@ -215,3 +215,12 @@ details.accordion p {
     grid-template-columns: 1fr;
   }
 }
+
+.form-center {
+  max-width: 620px;          /* controls form width */
+  margin: 0 auto;            /* centers horizontally */
+}
+
+.form-center form {
+  width: 100%;
+}
