@@ -224,3 +224,15 @@ details.accordion p {
 .form-center form {
   width: 100%;
 }
+
+.footer-legal-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--slate, #5B6775);
+  text-decoration: none;
+}
+
+.footer-legal-link:hover {
+  text-decoration: underline;
+}
