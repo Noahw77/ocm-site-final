@@ -179,3 +179,26 @@
   .hero::before { background-position: right -8% center; opacity: 0.16; }
   .hero::after { display: none; }
 }
+
+/* =========================================================
+   Unbox main content cards globally (preserve spacing)
+   ========================================================= */
+
+/* Default: remove visual card chrome, keep padding */
+.card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 28px; /* matches original card padding */
+}
+
+/* =========================================================
+   Keep boxed cards on FAQ and Contact pages
+   ========================================================= */
+
+.page-faq .card,
+.page-contact .card {
+  background: #fff;
+  border: 1px solid var(--border-light, #C7D7EA);
+  box-shadow: 0 10px 24px rgba(11, 31, 59, 0.06);
+}
