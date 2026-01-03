@@ -227,10 +227,11 @@ details.accordion p {
 
 .footer-legal-link {
   display: inline-block;
-  margin-top: 6px;
+  margin: 10px auto 0;
   font-size: 0.85rem;
   color: var(--slate, #5B6775);
   text-decoration: none;
+    text-align: center;
 }
 
 .footer-legal-link:hover {
