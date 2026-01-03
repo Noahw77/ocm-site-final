@@ -236,3 +236,7 @@ details.accordion p {
 .footer-legal-link:hover {
   text-decoration: underline;
 }
+
+.quote-author {
+  margin-left: 1.5rem; /* adjust as desired */
+}
