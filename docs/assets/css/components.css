@@ -241,3 +241,30 @@ details.accordion p {
 .quote-author {
   margin-left: 3rem; /* adjust as desired */
 }
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* THIS is the key line */
+}
+
+.footer-logo {
+  display: block;
+}
+
+.footer-company {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.footer-legal-link {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--slate, #5B6775);
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer-legal-link:hover {
+  text-decoration: underline;
+}
