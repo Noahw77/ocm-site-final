@@ -225,18 +225,6 @@ details.accordion p {
   width: 100%;
 }
 
-.footer-legal-link {
-  display: inline-block;
-  margin: 15px auto 0;
-  font-size: 0.85rem;
-  color: var(--slate, #5B6775);
-  text-decoration: none;
-    text-align: center;
-}
-
-.footer-legal-link:hover {
-  text-decoration: underline;
-}
 
 .quote-author {
   margin-left: 3rem; /* adjust as desired */
