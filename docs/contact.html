@@ -13,21 +13,6 @@
   <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
 </head>
-
-<script>
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("success") === "true") {
-      const form = document.querySelector("form");
-      const success = document.getElementById("form-success");
-      if (form && success) {
-        form.style.display = "none";
-        success.style.display = "block";
-      }
-    }
-  })();
-</script>
-
 <body>
   <div id="site-header"></div>
 
@@ -49,13 +34,6 @@
 <section class="section alt">
   <div class="container">
     <div class="card" id="contact-form">
-      <div id="form-success" style="display:none;">
-  <h3>Thank you</h3>
-  <p>
-    Your message has been received. A member of the Ochoco Capital team
-    will review your inquiry and respond as appropriate.
-  </p>
-</div>
       <h2>Request Information</h2>
       <p class="small">Submit the form below. A member of the team will review and respond as appropriate.</p>
       <div class="hr"></div>
@@ -81,7 +59,6 @@
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
         <button class="btn primary" type="submit">Request Information</button>
-        <input type="hidden" name="_next" value="https://YOURDOMAIN/contact.html?success=true">
       </form>
     </div>
     </div>
