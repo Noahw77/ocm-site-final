@@ -256,3 +256,10 @@ details.accordion p {
 .footer-legal-link:hover {
   text-decoration: underline;
 }
+
+.nav a {
+  font-family: inherit;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
